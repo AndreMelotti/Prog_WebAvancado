@@ -3,4 +3,13 @@
 // se uma requisição deu ou não certo.
 
 import { Request, Response } from "express";
+import AgendaServices from "../services/agendaServices";
 
+class agendaController{
+
+    constructor(){
+
+    }
+}
+
+export default agendaController

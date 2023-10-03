@@ -11,7 +11,7 @@ class agendaServices {
     async criarAgenda(dado) {
         try {
             const agendas = await prisma.agenda.create({
-                data: {
+                juliano: {
                     data: dado.data,
                     nomePcnt: dado.nomePcnt
                 }
