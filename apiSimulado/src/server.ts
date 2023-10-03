@@ -7,6 +7,7 @@ import secretariaRoute from "./routes/secretariaRoute";
 import consultaRoute from "./routes/consultaRoute";
 import agendaRoute from "./routes/agendaRoute";
 
+
 dotenv.config();
 
 const app = express();
@@ -14,3 +15,4 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/agenda", agendaRoute);
+app.use("/api/consultas", consultaRoute)
