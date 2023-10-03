@@ -3,3 +3,8 @@
 // no \services, de forma que utilizamos formas de verificação para analisar e ter certeza
 // se uma requisição deu ou não certo.
 Object.defineProperty(exports, "__esModule", { value: true });
+class pacienteController {
+    constructor() {
+    }
+}
+exports.default = pacienteController;

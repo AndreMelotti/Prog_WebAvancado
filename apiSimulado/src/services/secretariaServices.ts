@@ -4,11 +4,9 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-class Secretaria{
+class secretariaServices{
 
-    constructor(){
-
-    }
+    constructor(){}
 
     async criarSecreteria(){
         
@@ -24,4 +22,4 @@ class Secretaria{
     }
 }
 
-export default Secretaria
+export default new secretariaServices

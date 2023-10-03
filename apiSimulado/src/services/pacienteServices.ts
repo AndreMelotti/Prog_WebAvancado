@@ -6,9 +6,7 @@ const prisma = new PrismaClient();
 
 class Paciente{
     
-    constructor(){
-
-    }
+    constructor(){}
 
     async criarPaciente(){
         
@@ -27,4 +25,4 @@ class Paciente{
     }
 }
 
-export default Paciente
+export default new Paciente

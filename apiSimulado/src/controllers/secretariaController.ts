@@ -3,3 +3,13 @@
 // se uma requisição deu ou não certo.
 
 import { Request, Response } from "express";
+import secretariaServices from "../services/secretariaServices";
+
+class secretariaController{
+
+    constructor(){
+
+    }
+}
+
+export default secretariaController

@@ -3,3 +3,13 @@
 // se uma requisição deu ou não certo.
 
 import { Request, Response } from "express";
+import consultaServices from "../services/consultaServices";
+
+class consultaController{
+
+    constructor(){
+
+    }
+}
+
+export default consultaController

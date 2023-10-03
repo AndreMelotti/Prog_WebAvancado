@@ -8,9 +8,7 @@ const prisma = new PrismaClient();
 
 class agendaServices{
 
-    constructor(){
-
-    }
+    constructor(){}
 
     async criarAgenda(dado: any){                           // C do CRUD
         try{
@@ -38,7 +36,7 @@ class agendaServices{
 
     }
 
-    
+
 }
 
-export default agendaServices
+export default new agendaServices

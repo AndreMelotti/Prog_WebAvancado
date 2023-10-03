@@ -3,13 +3,20 @@
 // se uma requisição deu ou não certo.
 
 import { Request, Response } from "express";
-import AgendaServices from "../services/agendaServices";
+import agendaServices from "../services/agendaServices";
 
 class agendaController{
 
-    constructor(){
+    constructor(){}
 
-    }
+      async criarAgenda(req: Request, res: Response) {
+        try {
+          const agendas = await agendaServices.criarAgenda(req.body);
+          res.status(201).json({ status: "ok", agenda: agendas });
+        } catch (error) {
+          res.status(500).json({ status: "error", message: (error as any).message });
+        }
+      }
 }
 
-export default agendaController
+export default new agendaController

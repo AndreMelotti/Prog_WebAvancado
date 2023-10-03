@@ -3,3 +3,14 @@
 // se uma requisição deu ou não certo.
 
 import { Request, Response } from "express";
+import pacienteServices from "../services/pacienteServices";
+
+class pacienteController{
+
+    constructor(){
+
+    }
+    
+}
+
+export default pacienteController

@@ -6,9 +6,7 @@ const prisma = new PrismaClient();
 
 class Consulta{
 
-    constructor(){
-
-    }
+    constructor(){}
 
     async criarConsulta(){
 
@@ -27,4 +25,4 @@ class Consulta{
     }
 }
 
-export default Consulta
+export default new Consulta
