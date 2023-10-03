@@ -18,7 +18,7 @@ npx tsc -init
 
 # Comandos de instalação e inicialização do Express
 ```bash
-npm install express --save
+npm install express --save-dev
 ```
 ```bash
 npm i --save-dev @types/express
