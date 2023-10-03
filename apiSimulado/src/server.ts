@@ -16,3 +16,5 @@ app.use(express.json());
 
 app.use("/api/agenda", agendaRoute);
 app.use("/api/consultas", consultaRoute)
+app.use("/api/pacietne", pacienteRouter);
+app.use("/api/secretaria", secretariaRoute)

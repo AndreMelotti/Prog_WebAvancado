@@ -27,7 +27,7 @@ class pacienteController{
         }
     }
 
-    async upedatePaciente(req: Request, res: Response){
+    async updatePaciente(req: Request, res: Response){
         try{
             const id = parseInt(req.params.id);
             const pacientes = await pacienteServices.updatePaciente(id, req.body);

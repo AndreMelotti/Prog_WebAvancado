@@ -28,6 +28,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv = __importStar(require("dotenv"));
+//Importar as rotas
+const pacienteRoute_1 = __importDefault(require("./routes/pacienteRoute"));
+const secretariaRoute_1 = __importDefault(require("./routes/secretariaRoute"));
 const consultaRoute_1 = __importDefault(require("./routes/consultaRoute"));
 const agendaRoute_1 = __importDefault(require("./routes/agendaRoute"));
 dotenv.config();
@@ -35,3 +38,5 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use("/api/agenda", agendaRoute_1.default);
 app.use("/api/consultas", consultaRoute_1.default);
+app.use("/api/pacietne", pacienteRoute_1.default);
+app.use("/api/secretaria", secretariaRoute_1.default);

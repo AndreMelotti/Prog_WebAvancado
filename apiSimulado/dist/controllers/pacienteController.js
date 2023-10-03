@@ -27,7 +27,7 @@ class pacienteController {
             res.status(500).json({ status: "ok", message: error.message });
         }
     }
-    async upedatePaciente(req, res) {
+    async updatePaciente(req, res) {
         try {
             const id = parseInt(req.params.id);
             const pacientes = await pacienteServices_1.default.updatePaciente(id, req.body);
