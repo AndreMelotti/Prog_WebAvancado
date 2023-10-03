@@ -12,4 +12,4 @@ class secretariaController{
     }
 }
 
-export default secretariaController
+export default new secretariaController

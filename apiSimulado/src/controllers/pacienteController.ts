@@ -13,4 +13,4 @@ class pacienteController{
     
 }
 
-export default pacienteController
+export default new pacienteController
