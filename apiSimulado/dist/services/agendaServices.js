@@ -9,23 +9,49 @@ class agendaServices {
     constructor() { }
     async criarAgenda(dado) {
         try {
-            const agendas = await prisma.agenda.create({
+            const agenda = await prisma.agenda.create({
                 data: {
                     data: dado.data,
                     nomePcnt: dado.nomePcnt
                 }
             });
-            return agendas;
+            return agenda;
         }
         catch (error) {
             throw new Error("Error ao criar uma nova Agenda"); // Esse comando faz sinaliza que algo inesperado aconteceu e que o fluxo normal do programa deve ser interrompido.
         }
     }
     async listarAgendas() {
+        try {
+            const agenda = await prisma.agenda.findMany();
+            return agenda;
+        }
+        catch (error) {
+            throw new Error("Error ao listar as agendas");
+        }
     }
-    async updateAgenda() {
+    async updateAgenda(id, dado) {
+        try {
+            const agenda = await prisma.agenda.update({
+                where: { id: id },
+                data: dado
+            });
+            return agenda;
+        }
+        catch (error) {
+            throw new Error("Error ao Atualizar a lista");
+        }
     }
-    async deletarAgenda() {
+    async deletarAgenda(id) {
+        try {
+            const agenda = await prisma.agenda.delete({
+                where: { id: id }
+            });
+            return agenda;
+        }
+        catch (error) {
+            throw new Error("Error ao Deletar a lista");
+        }
     }
 }
 exports.default = new agendaServices;

@@ -12,13 +12,13 @@ class agendaServices{
 
     async criarAgenda(dado: any){                           // C do CRUD
         try{
-            const agendas = await prisma.agenda.create({
+            const agenda = await prisma.agenda.create({
                 data: {                                     // o prisma reconhece data como padrão tentei mudar e deu merda
                     data: dado.data,
                     nomePcnt: dado.nomePcnt
                 }
             });
-            return agendas;
+            return agenda;
         } catch(error){
             throw new Error("Error ao criar uma nova Agenda")   // Esse comando faz sinaliza que algo inesperado aconteceu e que o fluxo normal do programa deve ser interrompido.
         }
@@ -26,8 +26,8 @@ class agendaServices{
 
     async listarAgendas(){                                      // R do CRUD
         try{
-            const agendas = await prisma.agendas.findMany();
-            return agendas;
+            const agenda = await prisma.agenda.findMany();
+            return agenda;
         }catch (error){
                 throw new Error ("Error ao listar as agendas")
             } 
@@ -35,11 +35,11 @@ class agendaServices{
 
     async updateAgenda(id: number, dado: any){                                       // U do CRUD
         try{
-            const agendas = await prisma.agendas.update({
+            const agenda = await prisma.agenda.update({
                 where: { id : id},
                 data: dado
             });
-            return agendas;
+            return agenda;
         }catch (error){
             throw new Error ("Error ao Atualizar a lista")
         }
@@ -47,10 +47,10 @@ class agendaServices{
 
     async deletarAgenda(id : number){                                      // D do CRUD
         try{
-            const agendas = await prisma.agendas.delete({
+            const agenda = await prisma.agenda.delete({
                 where: {id : id}
             });
-            return agendas;
+            return agenda;
         }catch(error){
             throw new Error ("Error ao Deletar a lista")
         }

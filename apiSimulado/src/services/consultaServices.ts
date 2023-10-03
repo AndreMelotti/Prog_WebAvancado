@@ -10,7 +10,7 @@ class Consulta{
 
     async criarConsulta(dado: any){
         try{
-            const consultas = await prisma.consultas.create({
+            const consulta = await prisma.consulta.create({
                 data:{
                    data: dado.data,
                    nomePcnte: dado.data,
@@ -19,7 +19,7 @@ class Consulta{
                    secretariaId: dado.data
                 }
             });
-            return consultas;
+            return consulta;
         }catch(error){
             throw new Error ("Error ao criar uma consulta")
         }
@@ -27,8 +27,8 @@ class Consulta{
 
     async listarConsulta(){
         try{
-            const consultas = await prisma.consultas.findMany()
-            return consultas;
+            const consulta = await prisma.consulta.findMany()
+            return consulta;
         }catch(error){
             throw new Error ("Error ao listar as Consultas")
         }
@@ -36,11 +36,11 @@ class Consulta{
 
     async updateConsulta(id: number, dado: any){
         try{
-            const consultas = await prisma.consultas.update({
+            const consulta = await prisma.consulta.update({
                 where: {id: id},
                 data: dado.data
             });
-            return consultas;
+            return consulta;
         }catch(error){
             throw new Error ("Error ao Atualizar as Consultas")
         }
@@ -48,10 +48,10 @@ class Consulta{
 
     async deletarConsulta(id: number){
         try{
-            const consultas = await prisma.consultas.delete({
+            const consulta = await prisma.consulta.delete({
                 where: {id: id}
             });
-            return consultas;
+            return consulta;
         }catch(error){
             throw new Error ("Error ao Deletar as consultas")
         }

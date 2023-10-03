@@ -5,13 +5,52 @@ const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 class Paciente {
     constructor() { }
-    async criarPaciente() {
+    async criarPaciente(dado) {
+        try {
+            const paciente = await prisma.paciente.create({
+                data: {
+                    nomePcnte: dado.data,
+                    senha: dado.data,
+                    usuario: dado.data
+                }
+            });
+            return paciente;
+        }
+        catch (error) {
+            throw new Error("Error ao criar pacientes");
+        }
     }
     async listarPaciente() {
+        try {
+            const paciente = await prisma.paciente.findMany();
+            return paciente;
+        }
+        catch (error) {
+            throw new Error("Error ao listar pacientes");
+        }
     }
-    async updatePaciete() {
+    async updatePaciente(id, dado) {
+        try {
+            const paciente = await prisma.paciente.update({
+                where: { id: id },
+                data: dado
+            });
+            return paciente;
+        }
+        catch (error) {
+            throw new Error("Error ao Atualizar");
+        }
     }
-    async deletarPaciente() {
+    async deletarPaciente(id) {
+        try {
+            const paciente = await prisma.paciente.delete({
+                where: { id: id }
+            });
+            return paciente;
+        }
+        catch (error) {
+            throw new Error("Error ao Deletar a lsita");
+        }
     }
 }
 exports.default = new Paciente;

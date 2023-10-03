@@ -10,14 +10,14 @@ class Paciente{
 
     async criarPaciente(dado: any){
         try{
-            const pacientes = await prisma.pacientes.create({
+            const paciente = await prisma.paciente.create({
                 data:{
                     nomePcnte: dado.data,
                     senha: dado.data,
                     usuario: dado.data
                 }
             });
-            return pacientes;
+            return paciente;
         }catch(error){
             throw new Error ("Error ao criar pacientes")
         }
@@ -25,8 +25,8 @@ class Paciente{
 
     async listarPaciente(){
         try {
-            const pacientes = await prisma.pacientes.findMany()
-            return pacientes;
+            const paciente = await prisma.paciente.findMany()
+            return paciente;
         }catch (error){
             throw new Error ("Error ao listar pacientes")
         }
@@ -34,11 +34,11 @@ class Paciente{
 
     async updatePaciente(id: number, dado: any){
         try{
-            const pacientes = await prisma.pacientes.update({
+            const paciente = await prisma.paciente.update({
                 where: {id: id},
                 data: dado
             });
-            return pacientes;
+            return paciente;
         }catch(error){
             throw new Error ("Error ao Atualizar")
         }
@@ -46,10 +46,10 @@ class Paciente{
 
     async deletarPaciente(id: number){
         try {
-            const pacientes = await prisma.pacientes.delete({
+            const paciente = await prisma.paciente.delete({
                 where: {id: id}
             });
-            return pacientes;
+            return paciente;
         }catch(error){
             throw new Error ("Error ao Deletar a lsita")
         }
