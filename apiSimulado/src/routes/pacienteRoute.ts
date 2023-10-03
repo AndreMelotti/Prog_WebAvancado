@@ -2,6 +2,7 @@
 // e definir as funções que serão feitas baseados nele
 
 import { Router } from "express";
+import pacieteController from "../controllers/pacienteController";
 
 const pacienteRouter = Router();
 

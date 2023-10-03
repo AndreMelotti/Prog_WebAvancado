@@ -25,15 +25,35 @@ class agendaServices{
     }
 
     async listarAgendas(){                                      // R do CRUD
-
+        try{
+            const agendas = await prisma.agendas.findMany();
+            return agendas;
+        }catch (error){
+                throw new Error ("Error ao listar as agendas")
+            } 
     }
 
-    async updateAgenda(){                                       // U do CRUD
-
+    async updateAgenda(id: number, dado: any){                                       // U do CRUD
+        try{
+            const agendas = await prisma.agendas.update({
+                where: { id : id},
+                data: dado
+            });
+            return agendas;
+        }catch (error){
+            throw new Error ("Error ao Atualizar a lista")
+        }
     }
 
-    async deletarAgenda(){                                      // D do CRUD
-
+    async deletarAgenda(id : number){                                      // D do CRUD
+        try{
+            const agendas = await prisma.agendas.delete({
+                where: {id : id}
+            });
+            return agendas;
+        }catch(error){
+            throw new Error ("Error ao Deletar a lista")
+        }
     }
 
 

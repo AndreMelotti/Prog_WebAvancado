@@ -2,14 +2,13 @@
 // e definir as funções que serão feitas baseados nele
 
 import { Router } from "express";
-import AgendaController from "../controllers/agendaController";
+import agendaController from "../controllers/agendaController";
 
-const AgendaRouter = Router();
+const agendaRouter = Router();
 
-//AgendaRouter.get("/listar", AgendaController.listarAgendas);
-AgendaRouter.post("/criar", AgendaController.criarAgenda);
-//AgendaRouter.get("/:id", AgendaController.obterAgenda);
-//AgendaRouter.patch("/:id", AgendaController.atualizarAgenda);
-//AgendaRouter.delete("/:id", AgendaController.deletarAgenda);
+agendaRouter.post("/criar", agendaController.criarAgenda);
+agendaRouter.get("/listar", agendaController.listarAgenda);
+agendaRouter.patch("/:id", agendaController.updateAgenda);
+agendaRouter.delete("/:id", agendaController.deletarAgenda);
 
-export default AgendaRouter;
+export default agendaRouter;
