@@ -9,14 +9,14 @@ class pacienteController{
 
     constructor(){}
     
-    async criarPaciente(req: Request, res: Response){
-        try{
-            const pacientes = await pacienteServices.criarPaciente(req.body);
-            res.status(200).json({status: "ok", pacientes: pacientes});
-        }catch(error){
-            res.status(500).json({status: "Error", message: (error as any).message})
+    async criarPaciente(req: Request, res: Response) {
+        try {
+          const paciente = await pacienteServices.criarPaciente(req.body);
+          res.status(200).json({ status: "ok", paciente: paciente });
+        } catch (error) {
+          res.status(500).json({ status: "error", message: (error as any).message });
         }
-    }
+      }
 
     async listarPaciente(req: Request, res: Response){
         try{

@@ -20,7 +20,7 @@ class secretariaController {
     }
     async listarSecretaria(req, res) {
         try {
-            const secretarias = secretariaServices_1.default.listarSecretarias();
+            const secretarias = await secretariaServices_1.default.listarSecretarias();
             res.status(200).json({ status: "ok", secretarias: secretarias });
         }
         catch (error) {

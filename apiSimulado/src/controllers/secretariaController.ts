@@ -18,14 +18,14 @@ class secretariaController{
         }
     }
 
-    async listarSecretaria(req: Request, res: Response){
-        try{
-            const secretarias = secretariaServices.listarSecretarias();
-            res.status(200).json({status: "ok", secretarias: secretarias});
-        }catch(error){
-            res.status(500).json({status: "error", message: (error as any).message});
+    async listarSecretaria(req: Request, res: Response) {
+        try {
+          const secretarias = await secretariaServices.listarSecretarias();
+          res.status(200).json({ status: "ok", secretarias: secretarias });
+        } catch (error) {
+          res.status(500).json({ status: "error", message: (error as any).message });
         }
-    }
+      }
 
     async updateSecretaria(req: Request, res: Response){
        try{

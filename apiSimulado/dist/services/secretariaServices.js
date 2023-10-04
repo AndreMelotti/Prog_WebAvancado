@@ -9,8 +9,8 @@ class secretariaServices {
         try {
             const secretaria = await prisma.secretaria.create({
                 data: {
-                    nome: dado.data,
-                    RG: dado.data,
+                    nome: dado.nome,
+                    RG: dado.RG,
                 }
             });
             return secretaria;
@@ -21,11 +21,12 @@ class secretariaServices {
     }
     async listarSecretarias() {
         try {
-            const secretaria = await prisma.secretaria.findMany();
-            return secretaria;
+            const secretarias = await prisma.secretaria.findMany();
+            return secretarias;
         }
         catch (error) {
-            throw new Error("Error ao listar secretarias");
+            console.log(error);
+            throw new Error("Erro ao listar secretarias");
         }
     }
     async updateSecretarias(id, dado) {
@@ -48,7 +49,8 @@ class secretariaServices {
             return secretaria;
         }
         catch (error) {
-            throw new Error("Error ao Deletar a lsita");
+            console.log(error);
+            throw new Error("Error ao Deletar a lista");
         }
     }
 }

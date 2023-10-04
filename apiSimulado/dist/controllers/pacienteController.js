@@ -11,11 +11,11 @@ class pacienteController {
     constructor() { }
     async criarPaciente(req, res) {
         try {
-            const pacientes = await pacienteServices_1.default.criarPaciente(req.body);
-            res.status(200).json({ status: "ok", pacientes: pacientes });
+            const paciente = await pacienteServices_1.default.criarPaciente(req.body);
+            res.status(200).json({ status: "ok", paciente: paciente });
         }
         catch (error) {
-            res.status(500).json({ status: "Error", message: error.message });
+            res.status(500).json({ status: "error", message: error.message });
         }
     }
     async listarPaciente(req, res) {

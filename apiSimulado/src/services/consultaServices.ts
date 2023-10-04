@@ -8,20 +8,21 @@ class Consulta{
 
     constructor(){}
 
-    async criarConsulta(dado: any){
-        try{
-            const consulta = await prisma.consulta.create({
-                data:{
-                   data: dado.data,
-                   nomePcnte: dado.data,
-                   nomeDents: dado.data,
-                   pacienteId: dado.data,
-                   secretariaId: dado.data
-                }
-            });
-            return consulta;
-        }catch(error){
-            throw new Error ("Error ao criar uma consulta")
+    async criarConsulta(data: any) {
+        try {
+          const consulta = await prisma.consulta.create({
+            data: {
+              data: data.data,
+              nomePcnte: data.nomePcnte,
+              nomeDents: data.nomeDents,
+              pacienteId: data.pacienteId,
+              secretariaId: data.secretariaId
+            }
+          });
+          return consulta;
+        } catch (error) {
+          console.log(error);
+          throw new Error("Erro ao criar consulta");
         }
     }
 
@@ -34,17 +35,18 @@ class Consulta{
         }
     }
 
-    async updateConsulta(id: number, dado: any){
-        try{
-            const consulta = await prisma.consulta.update({
-                where: {id: id},
-                data: dado.data
-            });
-            return consulta;
-        }catch(error){
-            throw new Error ("Error ao Atualizar as Consultas")
+    async updateConsulta(id: number, dado: any) {
+        try {
+          const consulta = await prisma.consulta.update({
+            where: { id: id },
+            data: dado
+          });
+          return consulta;
+        } catch (error) {
+          console.log(error);
+          throw new Error("Erro ao atualizar consulta");
         }
-    }
+      }
 
     async deletarConsulta(id: number){
         try{

@@ -9,14 +9,15 @@ class Paciente {
         try {
             const paciente = await prisma.paciente.create({
                 data: {
-                    nomePcnte: dado.data,
-                    senha: dado.data,
-                    usuario: dado.data
+                    nomePcnte: dado.nomePcnte,
+                    senha: dado.senha,
+                    usuario: dado.usuario
                 }
             });
             return paciente;
         }
         catch (error) {
+            console.log(error);
             throw new Error("Error ao criar pacientes");
         }
     }
