@@ -1,8 +1,11 @@
 # Prog_WebAvancado
 
 # Descrição
-ainda nao tem nada mas no futuro vou escrever
-site sobre o prisma: https://www.prisma.io/docs/getting-started/quickstart
+Projeto de CRUD em typescript. Utilizamos NODE.js e Prisma ORM para confecção do 
+projeto.
+
+
+Site com informações extra sobre o prisma: https://www.prisma.io/docs/getting-started/quickstart
 
 
 # Comandos de instalação e inicialização do TypeScript
