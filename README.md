@@ -1,6 +1,6 @@
 # Prog_WebAvancado
 
-# Descrição
+## Descrição
 Projeto de CRUD em typescript. Utilizamos NODE.js e Prisma ORM para confecção do 
 projeto.
 
@@ -8,7 +8,7 @@ projeto.
 Site com informações extra sobre o prisma: https://www.prisma.io/docs/getting-started/quickstart
 
 
-# Comandos de instalação e inicialização do TypeScript
+## Comandos de instalação e inicialização do TypeScript
 ```bash
 npm init -y
 ```
@@ -19,14 +19,14 @@ npm install typescript --save-dev
 npx tsc -init
 ```
 
-# Comandos de instalação e inicialização do Express
+## Comandos de instalação e inicialização do Express
 ```bash
 npm install express --save-dev
 ```
 ```bash
 npm i --save-dev @types/express
 ```
-# Comandos de instalação e inicialização do Express
+## Comandos de instalação e inicialização do Express
 ```bash
 npm install prisma --save-dev
 ```
