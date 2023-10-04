@@ -33,6 +33,7 @@ const pacienteRoute_1 = __importDefault(require("./routes/pacienteRoute"));
 const secretariaRoute_1 = __importDefault(require("./routes/secretariaRoute"));
 const consultaRoute_1 = __importDefault(require("./routes/consultaRoute"));
 const agendaRoute_1 = __importDefault(require("./routes/agendaRoute"));
+const PORT = process.env.PORT || 3000;
 dotenv.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -40,3 +41,9 @@ app.use("/api/agenda", agendaRoute_1.default);
 app.use("/api/consultas", consultaRoute_1.default);
 app.use("/api/pacietne", pacienteRoute_1.default);
 app.use("/api/secretaria", secretariaRoute_1.default);
+app.get('/', (req, res) => {
+    res.send('Seu servidor está funcionando!');
+});
+app.listen(PORT, () => {
+    console.log("Servidor rodando na porta ${PORT}");
+});
