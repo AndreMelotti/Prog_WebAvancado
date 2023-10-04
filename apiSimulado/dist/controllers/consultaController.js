@@ -12,7 +12,7 @@ class consultaController {
     async criarConsulta(req, res) {
         try {
             const consulta = await consultaServices_1.default.criarConsulta(req.body);
-            res.status(201).json({ status: "ok", consulta: consulta });
+            res.status(200).json({ status: "ok", consulta: consulta });
         }
         catch (error) {
             res.status(500).json({ status: "error", message: error.message });
